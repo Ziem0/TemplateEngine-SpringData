@@ -1,0 +1,21 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="header">
+    <title th:text="${title}">Home</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+
+<footer th:fragment="foot">&copy; Ziemo Company</footer>
+
+<div th:fragment="container">
+    <p>ZIEMO</p>
+    <p>ANDRZEJEWSKI</p>
+    <p>LESZNO</p>
+</div>
+
+<!--can be reside inside distinct file such as macro-->
+<div th:fragment="frag (onevar,twovar)">
+    <p th:text="${onevar} + ' - ' + ${twovar}"></p>
+</div>
+
+

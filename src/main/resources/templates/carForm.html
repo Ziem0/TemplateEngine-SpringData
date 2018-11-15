@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="template :: header">
+<body>
+
+    <form method="post" action="#" th:action="@{/form}" th:object="${car}">
+        <input type="text" th:field="*{name}"/>
+        <input type="submit" value="Enter"/>
+    </form>
+
+    <div th:replace="template :: container"></div>
+
+    <div th:include="template :: frag(${value1},${value2})"></div>
+
+    <footer th:replace="template :: foot"></footer>
+</body>
+</html>

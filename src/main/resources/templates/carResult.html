@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="template :: header">
+<body>
+
+    <h1>Your car name is:</h1>
+    <p th:text="${car.name}"></p>
+    <a href="carForm.html"
+       th:href="@{/form/{carName}(carName=${car.name})}"
+       th:if="${car.name =='ferrari'}">
+    Back to form</a>
+
+
+    <dl th:object="${car}">
+        <dt>Car name</dt>
+        <dd th:text="*{name}"></dd>
+    </dl>
+
+    <tbody th:remove="all-but-first">
+        <tr th:each="row, stat : ${f1}">
+            <td th:text="${row.key}">DRIVER</td>
+            <td th:text="${row.value.getName()}">DRIVER</td>
+            <!--<td th:text="${stat}">CAR</td>-->
+        </tr>
+        <tr>
+            <td>Ziemo Ando</td>
+            <td>no team</td>
+        </tr>
+        <tr>
+            <td>Felipe Massa</td>
+            <td>no team</td>
+        </tr>
+    </tbody>
+
+
+
+    <footer th:replace="template :: foot"></footer>
+</body>
+</html>
